@@ -28,7 +28,11 @@ Es gibt acht Befehlsarten. Davon sind aber nur zwei Relevant.
 ##  Controller
 
 
-/* Program Change   1    0 - 127             */
-/* Stomp            25   0 / 127             */
-/* Mod              50   0 / 127             */
-/* Delay            28   0 / 127             */
+| Befehl        | ControllerNr. | Wert    |  
+| ------------- | ------------- | ------- |
+| ProgramChange | 1             | 0 - 127 |
+| Stomp (CC)    | 25            | 0 / 127 |
+| Mode (CC)     | 50            | 0 / 127 |
+| Delay (CC)    | 28            | 0 / 127 |
+
+* CC ist ein ControlChangeBefehl. Der Rest also für Programme ist es der ProgramChangeBefehl.
