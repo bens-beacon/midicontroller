@@ -5,7 +5,7 @@ Control Line6 Pod with Arduino.
 
 
 ## Übertragungsprotokoll
-Es werden drei Bytes über den Pin 1(TX) an den Pod übertragen. Die Übertragungsgeschwindigkeit ist 32250
+Es werden drei Bytes über den Pin 1(TX) an den Pod übertragen. Die Übertragungsgeschwindigkeit ist _31250_.
 
 | Status-Byte | Data-Byte       | Data-Byte     |
 | ----------- | --------------- | ------------- |
@@ -35,4 +35,4 @@ Es gibt acht Befehlsarten. Davon sind aber nur zwei Relevant.
 | Mode (CC)     | 50            | 0 / 127 |
 | Delay (CC)    | 28            | 0 / 127 |
 
-* CC ist ein ControlChangeBefehl. Der Rest also für Programme ist es der ProgramChangeBefehl.
+* CC ist ein ControlChangeBefehl. Der Rest hat den ProgramChangeBefehl.
