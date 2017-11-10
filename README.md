@@ -12,7 +12,7 @@ Es werden drei Bytes über den Pin 1(TX) an den Pod übertragen. Die Übertragun
 | Midi-Befehl | Controller (CC) | Wert (0-127)  |
 | 1 001 0000  | 00000000        | 00000000      |
   
-Der Midi-Befehl besteht:
+Das Status-Byte besteht aus:
 
 | 1           | 011       | 0000       |
 | ----------- | --------- | ---------- |
