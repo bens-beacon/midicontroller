@@ -2,12 +2,13 @@
  *
  *
  * CODE BY BEN
- */
+*/
 
-/* Prototyps  */
-void sendtopod(int MidiCommand, int MidiController, int MidiValue);
+/* Prototyps ---- */
+void programchange(int Program);
+void controlchange(int MidiController, int MidiValue);
 int readanalog(int AnalogPin);
-/* Vars ----- */
+/* Vars --------- */
 
 
 /* Setup ---- */
@@ -22,7 +23,7 @@ void loop(){
 for(int i=0;i<65;i++)
 {
   delay(1000);
-  sendtopod(192,1,i);
+  programchange(i);
 }
 
 
@@ -32,9 +33,14 @@ for(int i=0;i<65;i++)
 
 }
 /* Functinos  */
-void sendtopod(int MidiCommand, int MidiController, int MidiValue){
-  Serial.write(MidiCommand);
-  Serial.write(MidiController);
+void programchange(int Program){
+  Serial.write(192); 
+  Serial.write(1); 
+  Serial.wirte(Program);
+}
+void controlchange(int MidiController, int MidiValue){
+  Serial.write(176); 
+  Serial.write(MidiController); 
   Serial.wirte(MidiValue);
 }
 int readanalog(int AnalogPin){
