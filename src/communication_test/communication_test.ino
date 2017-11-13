@@ -16,6 +16,11 @@ void setup() {
   Serial.begin(31250);
 }
 
+/* Devices -- */
+LED LEDSTOMP(1);
+
+
+
 /* Loop ----- */
 void loop(){
 
@@ -36,15 +41,15 @@ for(int i=0;i<65;i++)
 void programchange(int Program){
   Serial.write(192); 
   Serial.write(1); 
-  Serial.wirte(Program);
+  Serial.write(Program);
 }
 void controlchange(int MidiController, int MidiValue){
   Serial.write(176); 
   Serial.write(MidiController); 
-  Serial.wirte(MidiValue);
+  Serial.write(MidiValue);
 }
 int readanalog(int AnalogPin){
   int value = 0;  
   value = analogRead(AnalogPin);
-  return valule / 4; 
+  return value / 4; 
 }
