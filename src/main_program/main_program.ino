@@ -10,7 +10,7 @@
 
 
 /* ELEMENTE --------- */
-MIDISEND POD;
+MIDISEND POD; 
 /* POWER     */   LED POWER_LED(12);
 /* STOMP     */   LED STOMP_LED(9);   BUTTON STOMP_BUTTON(2);   POTI STOMP_POTI(0);
 /* MOD       */   LED MOD_LED(10);    BUTTON MOD_BUTTON(3);     POTI MOD_POTI(1);
@@ -24,19 +24,19 @@ MIDISEND POD;
                     
 /* Setup ---- */
 void setup() {
-  Serial.begin(31250);
+  
 }
 
 
 /* Loop ----- */
 void loop(){
 
-
-
-
-
-
-
+  STOMP_LED.turn(STOMP_BUTTON.pressed());
+  POD.turn(25,STOMP_BUTTON.pressed());
+  POD.change(83,STOMP_POTI.getvalue());
+  delay(100);
+  
+  
 
 }
 

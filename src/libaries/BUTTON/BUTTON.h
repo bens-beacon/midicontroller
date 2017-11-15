@@ -13,8 +13,10 @@ class BUTTON
   public:
     BUTTON(int);
     int getState();
+    int changeState();
   public:
     int Pin;  
+    int State;
 };
 
 BUTTON::BUTTON(int PIN){
@@ -22,6 +24,11 @@ BUTTON::BUTTON(int PIN){
   pinMode(Pin, INPUT);
 }
 int BUTTON::getState(){
-		return digitalRead(Pin);
+		State = digitalRead(Pin)
+		return State;
+}
+int BUTTON::changeState(){
+		return ~State;
 }
 #endif
+
