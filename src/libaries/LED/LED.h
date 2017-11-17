@@ -12,8 +12,9 @@ class LED
 {
   public:
     LED(int);
-    void switchLEDon();
-    void switchLEDoff();
+    void switchOn();
+    void switchOff();
+    void turn(int);
   public:
     int Pin;  
 };
@@ -22,12 +23,8 @@ LED::LED(int PIN){
   Pin = PIN;
   pinMode(Pin, OUTPUT);   
 }
-void LED::switchLEDon(){
-  digitalWrite(Pin, HIGH);
+void LED::turn(int STATE){
+  digitalWrite(Pin, ~STATE);
 }
-void LED::switchLEDoff(){
-  digitalWrite(Pin, LOW);
-}
-
 
 #endif

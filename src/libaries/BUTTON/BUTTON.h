@@ -12,23 +12,29 @@ class BUTTON
 {
   public:
     BUTTON(int);
-    int getState();
-    int changeState();
+    int pressed();
   public:
-    int Pin;  
-    int State;
+    int Pin; 
+    int State_pre=LOW;
+    int all = LOW;
 };
 
 BUTTON::BUTTON(int PIN){
   Pin = PIN;   
   pinMode(Pin, INPUT);
 }
-int BUTTON::getState(){
-		State = digitalRead(Pin)
-		return State;
-}
-int BUTTON::changeState(){
-		return ~State;
-}
-#endif
 
+int BUTTON::pressed(){
+		if (digitalRead(Pin)==HIGH && State_pre==HIGH){
+			State_pre=LOW;
+			all = ~all;
+			delay(10);
+			}
+		if (digitalRead(Pin)==LOW && State_pre==LOW){
+			State_pre=HIGH;
+			delay(10);
+			}
+		return all;
+}
+
+#endif
