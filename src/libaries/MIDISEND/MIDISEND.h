@@ -45,11 +45,12 @@ void MIDISEND::turn(int CC, int MIDIVALUE){
 }
 
 void MIDISEND::change(int CC, int MIDIVALUE){
-	if(Value!=MIDIVALUE){
+	if(Value/6 != MIDIVALUE/6){
 		Serial.write(176); 
 		Serial.write(CC); 
 		Serial.write(MIDIVALUE);
 		Value = MIDIVALUE;
+		delay(10);
 	}
 }
 

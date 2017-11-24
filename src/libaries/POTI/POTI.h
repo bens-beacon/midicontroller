@@ -21,6 +21,6 @@ POTI::POTI(int PIN){
   Pin = PIN;   
 }
 int POTI::getvalue(){
-		return analogRead(Pin)/8;
+		return 127-analogRead(Pin)/8;
 }
 #endif

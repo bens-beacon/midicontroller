@@ -13,6 +13,7 @@ class BUTTON
   public:
     BUTTON(int);
     int pressed();
+    int clicked();
   public:
     int Pin; 
     int State_pre=LOW;
@@ -28,13 +29,28 @@ int BUTTON::pressed(){
 		if (digitalRead(Pin)==HIGH && State_pre==HIGH){
 			State_pre=LOW;
 			all = ~all;
-			delay(10);
+			delay(100);
 			}
 		if (digitalRead(Pin)==LOW && State_pre==LOW){
 			State_pre=HIGH;
-			delay(10);
+			delay(100);
 			}
 		return all;
 }
+
+int BUTTON::clicked(){
+		if (digitalRead(Pin)==HIGH && State_pre==HIGH){
+			State_pre=LOW;
+			all = ~all;
+			delay(100);
+			}
+		if (digitalRead(Pin)==LOW && State_pre==LOW){
+			State_pre=HIGH;
+			all = ~all;
+			delay(100);
+		}	
+		return all;
+}
+
 
 #endif
