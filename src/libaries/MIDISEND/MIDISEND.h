@@ -15,6 +15,7 @@ class MIDISEND
 		void next(int);
 		void prev(int);
 		void change(int,int);
+		void changestep(int,int,int);
 		void turn(int,int);
 	private:
 		int State=0;
@@ -45,10 +46,30 @@ void MIDISEND::turn(int CC, int MIDIVALUE){
 }
 
 void MIDISEND::change(int CC, int MIDIVALUE){
-	if(Value/6 != MIDIVALUE/6){
+	int a = Value-2;
+	int b = Value+2;	
+	if(MIDIVALUE < a || MIDIVALUE > b){
 		Serial.write(176); 
 		Serial.write(CC); 
 		Serial.write(MIDIVALUE);
+		//Serial.print(CC, DEC); 
+		//Serial.print(" -> ");
+		//Serial.println(MIDIVALUE,DEC); 
+		Value = MIDIVALUE;
+		delay(10);
+	}
+}
+
+void MIDISEND::changestep(int CC, int MIDIVALUE, int step){
+	int a = Value-2;
+	int b = Value+2;	
+	if(MIDIVALUE < a || MIDIVALUE > b){
+		Serial.write(176); 
+		Serial.write(CC); 
+		Serial.write(MIDIVALUE/step);
+		//Serial.print(CC, DEC); 
+		//Serial.print(" -> ");
+		//Serial.println(MIDIVALUE/step,DEC); 
 		Value = MIDIVALUE;
 		delay(10);
 	}

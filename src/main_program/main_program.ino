@@ -35,29 +35,29 @@ void loop(){
   
   /* STOMP */
   STOMP_LED.turn(STOMP_BUTTON.pressed());
-  STOMP.turn(25,STOMP_BUTTON.pressed());         // 25 -> on/off
-  STOMP.change(83,STOMP_POTI.getvalue());        // 83 -> Volume/Mix
+  STOMP.turn(25,STOMP_BUTTON.pressed());             // 25 -> on/off
+  STOMP.change(83,STOMP_POTI.getvalue());            // 83 -> Volume/Mix
   
   /* MOD   */
   MOD_LED.turn(MOD_BUTTON.pressed());        
-  MOD.turn(50,MOD_BUTTON.pressed());             // 50 -> on/off
-  MOD.change(29,MOD_POTI_1.getvalue());          // 29 -> Speed
-  MOD_2.change(56,MOD_POTI_2.getvalue());        // 56 -> Volume/Mix
+  MOD.turn(50,MOD_BUTTON.pressed());                 // 50 -> on/off
+  MOD.change(29,MOD_POTI_1.getvalue());              // 29 -> Speed
+  MOD_2.change(56,MOD_POTI_2.getvalue());            // 56 -> Volume/Mix
   
   /* DELAY */
   DELAY_LED.turn(DELAY_BUTTON.pressed());
-  DELAY.turn(28,DELAY_BUTTON.pressed());         // 28 -> on/off
-  DELAY.change(33,DELAY_POTI_1.getvalue());      // 33 -> Volume/Mix
-  DELAY_1.change(34,DELAY_POTI_2.getvalue());    // 88 -> Feedback
-  DELAY_2.change(88,DELAY_POTI_3.getvalue()/12); // 34 -> Delaytyp
+  DELAY.turn(28,DELAY_BUTTON.pressed());             // 28 -> on/off
+  DELAY.change(33,DELAY_POTI_1.getvalue());          // 33 -> Volume/Mix
+  DELAY_1.change(34,DELAY_POTI_2.getvalue());        // 88 -> Feedback
+  DELAY_2.changestep(88,DELAY_POTI_3.getvalue(),10); // 34 -> Delaytyp
   
   /* REVERB */
   REVERB_LED.turn(REVERB_BUTTON.pressed());
-  REVERB.turn(36,REVERB_BUTTON.pressed());       // 36 -> on/off
-  REVERB.change(38,REVERB_POTI.getvalue()/8);    // 38 -> Decay
+  REVERB.turn(36,REVERB_BUTTON.pressed());           // 36 -> on/off
+  REVERB.changestep(37,REVERB_POTI.getvalue(),8);    // 38 -> Decay
   
   /* WAHWAH */
-  WAH.turn(43,WAH_BUTTON.pressed());             // 43 -> on/off
+  WAH.turn(43,WAH_BUTTON.pressed());                 // 43 -> on/off
   
   /* BANUP  */
  
