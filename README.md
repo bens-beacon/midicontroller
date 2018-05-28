@@ -1,11 +1,10 @@
 # Midicontroller 
 
-Control Pod from Line6 with Arduino.
+This is just a small Midicontroller which sends commands from Arduino to Line6 Pod guitar effectdevice. 
 
 ## How does it work?
 
-To send commands to Pod you can use Pin 1(TX). The Transmissionspeed is _31250_.
-
+To send commands it will be used Pin 1(TX) on arduino sield. The Transmissionspeed is _31250_.
 
 ## Transferprotocoll
 
